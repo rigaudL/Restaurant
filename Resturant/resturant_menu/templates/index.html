@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Restaurant Menu</h1>
+    {% for meal_type, _ in meals %}
+        <h2>{{ meal_type }}</h2>
+        {% for item in item_list %}
+            {% if item.meal_type == meal_type %}
+                {% if item.status == 'not_available' %}
+                    <!-- Pass item's primary key (pk) as argument -->
+                    <a href="{% url 'menu_item' pk=item.pk %}"><p><del>{{ item.meal }}</del></p></a>
+                    <p>{{ item.description }}</p>
+                {% else %}
+                    <a href="https://example.com"><p>{{ item.meal }}</p></a>
+                    <p>{{ item.description }}</p>
+                    <p>${{ item.price }}</p>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+{% endblock %}
