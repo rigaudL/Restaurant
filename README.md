@@ -1,2 +1,2 @@
 # Restaurant
-Restaurant 
+This Django application is a comprehensive restaurant menu management system. It includes features for defining menu items, categorizing them by meal type, managing their availability status, and displaying them in a user-friendly web interface. The system leverages Django's powerful model-view-template (MVT) architecture and includes administrative functionality for easy management of menu items through the Django admin interface.
